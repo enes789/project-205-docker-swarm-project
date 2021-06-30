@@ -1,0 +1,19 @@
+Tasks:
+
+- Create docker image using the Dockerfile from the base image of python:alpine.
+- Create docker-compose yaml stack
+    - mysql:5.7
+    - attach init.sql
+    - pull the image of the app from the AWS ECR repository.
+    - global mode
+    - port 80
+
+
+Infrastructure:
+
+- Create CFN Template to deploy the app into
+- 5 nodes : 3 manager + 2 worker
+- Amazon Linux 2
+- Docker, AWS CLI Version 2, git, docker swarm, Amazon ECR Credential Helper
+- 
+
