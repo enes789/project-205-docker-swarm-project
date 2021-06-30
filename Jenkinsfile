@@ -3,7 +3,7 @@ pipeline {
         label 'master'
     }
     environment{
-        PATH=sh(script:"echo $PATH:/usr/local/bin", returnStdout:true).trim()
+        PATH=sh(script:"echo $PATH:/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin", returnStdout:true).trim()
         AWS_REGION = "us-east-1"
         AWS_ACCOUNT_ID=sh(script:'export PATH="$PATH:/usr/local/bin" && aws sts get-caller-identity --query Account --output text', returnStdout:true).trim()
         ECR_REGISTRY="${AWS_ACCOUNT_ID}.dkr.ecr.${AWS_REGION}.amazonaws.com"
